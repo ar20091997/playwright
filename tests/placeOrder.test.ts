@@ -6,6 +6,8 @@ import { CartPage } from '../pages/CartPage';
 import { CheckoutPage } from '../pages/Checkout';
 import { CheckoutDetailsPage } from '../pages/CheckoutDetails';
 
+const itemName = process.env.ITEM_NAME || 'sauce-labs-backpack'; // Default to a specific item if not set in .env
+
 test.describe('Place Order Test', () => {  
     let loginPage: LoginPage;
     let inventoryPage: InventoryPage;
@@ -19,7 +21,7 @@ test.describe('Place Order Test', () => {
         const context = await browser.newContext();
         const page = await context.newPage();
         loginPage = new LoginPage(page);
-        inventoryPage = new InventoryPage(page, "sauce-labs-onesie");
+        inventoryPage = new InventoryPage(page, itemName);
         cartPage = new CartPage(page);
         checkoutDetailsPage = new CheckoutDetailsPage(page);
         checkoutPage = new CheckoutPage(page);
