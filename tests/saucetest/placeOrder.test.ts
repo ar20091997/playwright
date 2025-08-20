@@ -1,10 +1,10 @@
 // I want to place an order using all the page objects provided.
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
-import { InventoryPage } from '../pages/InventoryPage';
-import { CartPage } from '../pages/CartPage';
-import { CheckoutPage } from '../pages/Checkout';
-import { CheckoutDetailsPage } from '../pages/CheckoutDetails';
+import { LoginPage } from '../../pages/saucepages/LoginPage';
+import { InventoryPage } from '../../pages/saucepages/InventoryPage';
+import { CartPage } from '../../pages/saucepages/CartPage';
+import { CheckoutPage } from '../../pages/saucepages/Checkout';
+import { CheckoutDetailsPage } from '../../pages/saucepages/CheckoutDetails';
 
 const itemName = process.env.ITEM_NAME || 'sauce-labs-backpack'; // Default to a specific item if not set in .env
 
